@@ -1,13 +1,13 @@
 ANGGOTA
-
-Nama Axel Sean
+<br/>
+Nama Axel Sean <br/>
 NRP : 221116938
-
-Nama : Fredley Antony
+<br/>
+Nama : Fredley Antony <br/>
 NRP : 221116956
-
-Nama : Gaby Paulina
+<br/>
+Nama : Gaby Paulina <br/>
 NRP : 221116957
-
-Nama : Jonathan Wilbert
+<br/>
+Nama : Jonathan Wilbert <br/>
 NRP : 221116966
