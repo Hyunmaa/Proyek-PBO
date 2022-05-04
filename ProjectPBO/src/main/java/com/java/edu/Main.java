@@ -14,8 +14,12 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        System.out.println("Main disini");
-        System.out.println("Tes");
+        Menu menu = new Menu();
+        boolean run = true;
+        
+        while(run) {
+            menu.mainMenu();
+        }
     }
     
 }
