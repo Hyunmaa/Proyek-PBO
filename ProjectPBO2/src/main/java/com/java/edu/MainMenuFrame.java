@@ -4,6 +4,8 @@
  */
 package com.java.edu;
 
+import java.awt.Dimension;
+
 /**
  *
  * @author Fredley Antony
@@ -27,64 +29,65 @@ public class MainMenuFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        btnListVideo = new javax.swing.JButton();
+        btnSortVideo = new javax.swing.JButton();
+        btnSetting = new javax.swing.JButton();
+        btnSearchVideo = new javax.swing.JButton();
+        btnPlaylist = new javax.swing.JButton();
+        btnChannel = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(800, 400));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("PBO Media Player");
         jLabel1.setToolTipText("");
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("List Video");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnListVideo.setBackground(new java.awt.Color(255, 255, 255));
+        btnListVideo.setText("List Video");
+        btnListVideo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnListVideoActionPerformed(evt);
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Sorting Video");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnSortVideo.setBackground(new java.awt.Color(255, 255, 255));
+        btnSortVideo.setText("Sorting Video");
+        btnSortVideo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnSortVideoActionPerformed(evt);
             }
         });
 
-        jButton3.setBackground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("Setting");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btnSetting.setBackground(new java.awt.Color(255, 255, 255));
+        btnSetting.setText("Setting");
+        btnSetting.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btnSettingActionPerformed(evt);
             }
         });
 
-        jButton4.setBackground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("Search Video");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        btnSearchVideo.setBackground(new java.awt.Color(255, 255, 255));
+        btnSearchVideo.setText("Search Video");
+        btnSearchVideo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                btnSearchVideoActionPerformed(evt);
             }
         });
 
-        jButton5.setBackground(new java.awt.Color(255, 255, 255));
-        jButton5.setText("Playlist");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        btnPlaylist.setBackground(new java.awt.Color(255, 255, 255));
+        btnPlaylist.setText("Playlist");
+        btnPlaylist.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                btnPlaylistActionPerformed(evt);
             }
         });
 
-        jButton6.setBackground(new java.awt.Color(255, 255, 255));
-        jButton6.setText("Channel");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        btnChannel.setBackground(new java.awt.Color(255, 255, 255));
+        btnChannel.setText("Channel");
+        btnChannel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                btnChannelActionPerformed(evt);
             }
         });
 
@@ -93,19 +96,17 @@ public class MainMenuFrame extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(199, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addContainerGap(198, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(198, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(btnListVideo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnSearchVideo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnSetting, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnChannel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnPlaylist, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnSortVideo, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(199, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -113,46 +114,50 @@ public class MainMenuFrame extends javax.swing.JFrame {
                 .addGap(20, 20, 20)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton1)
+                .addComponent(btnListVideo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton4)
+                .addComponent(btnSearchVideo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton2)
+                .addComponent(btnSortVideo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton5)
+                .addComponent(btnPlaylist)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton6)
+                .addComponent(btnChannel)
                 .addGap(18, 18, 18)
-                .addComponent(jButton3)
-                .addContainerGap(93, Short.MAX_VALUE))
+                .addComponent(btnSetting)
+                .addContainerGap(90, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnListVideoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListVideoActionPerformed
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnListVideoActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnSortVideoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSortVideoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnSortVideoActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void btnSettingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSettingActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_btnSettingActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void btnSearchVideoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchVideoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_btnSearchVideoActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void btnPlaylistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlaylistActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_btnPlaylistActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void btnChannelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChannelActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
+        RegisterChannel r = new RegisterChannel();
+        r.pack();
+        r.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnChannelActionPerformed
 
     /**
      * @param args the command line arguments
@@ -193,12 +198,12 @@ public class MainMenuFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
+    private javax.swing.JButton btnChannel;
+    private javax.swing.JButton btnListVideo;
+    private javax.swing.JButton btnPlaylist;
+    private javax.swing.JButton btnSearchVideo;
+    private javax.swing.JButton btnSetting;
+    private javax.swing.JButton btnSortVideo;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

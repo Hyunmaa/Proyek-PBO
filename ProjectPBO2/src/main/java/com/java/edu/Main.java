@@ -4,6 +4,9 @@
  */
 package com.java.edu;
 
+import javafx.application.Application;
+
+
 /**
  *
  * @author Fredley Antony
@@ -15,11 +18,8 @@ public class Main {
      */
     public static void main(String[] args) {
         Menu menu = new Menu();
-        boolean run = true;
-        
-        while(run) {
-            menu.mainMenu();
-        }
+        menu.mainMenu();
+        //Application.launch(VideoPlayer.class, args);
     }
     
 }
