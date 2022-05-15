@@ -18,7 +18,7 @@ public class Main {
      */
     public static void main(String[] args) {
         Menu menu = new Menu();
-        menu.mainMenu();
+        menu.mainMenu(args);
         //Application.launch(VideoPlayer.class, args);
     }
     

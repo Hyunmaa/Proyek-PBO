@@ -30,13 +30,14 @@
               <EmptySpace pref="198" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="btnListVideo" max="32767" attributes="0"/>
-                      <Component id="btnSearchVideo" max="32767" attributes="0"/>
+                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                      <Component id="jButton1" alignment="0" max="32767" attributes="0"/>
+                      <Component id="btnListVideo" alignment="0" max="32767" attributes="0"/>
+                      <Component id="btnSearchVideo" alignment="0" max="32767" attributes="0"/>
                       <Component id="btnSetting" alignment="0" max="32767" attributes="0"/>
                       <Component id="btnChannel" alignment="0" max="32767" attributes="0"/>
                       <Component id="btnPlaylist" alignment="0" max="32767" attributes="0"/>
-                      <Component id="btnSortVideo" min="-2" pref="125" max="-2" attributes="0"/>
+                      <Component id="btnSortVideo" alignment="0" pref="125" max="32767" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace pref="199" max="32767" attributes="0"/>
@@ -60,7 +61,9 @@
               <Component id="btnChannel" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="btnSetting" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="90" max="32767" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="44" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -139,6 +142,14 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnChannelActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButton1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Play"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

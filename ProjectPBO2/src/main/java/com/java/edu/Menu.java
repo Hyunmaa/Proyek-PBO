@@ -16,9 +16,10 @@ public class Menu {
     int wFrame = 800;
     int hFrame = 400;
     
-    public void mainMenu() {
+    public void mainMenu(String[] args) {
         mainMenu.setPreferredSize(new Dimension(wFrame, hFrame));
         mainMenu.pack();
         mainMenu.setVisible(true);
+        mainMenu.pass(args);
     }
 }

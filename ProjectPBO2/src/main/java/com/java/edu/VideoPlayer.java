@@ -26,10 +26,10 @@ public class VideoPlayer extends Application{
     @Override
     public void start(Stage primaryStage) throws Exception {
         StackPane root = new StackPane();
-        /*FileChooser fil_chooser = new FileChooser();
+        FileChooser fil_chooser = new FileChooser();
         File file = fil_chooser.showOpenDialog(primaryStage);
-        Media source = new Media(file.toURI().toString());*/
-        Media source = new Media(link);
+        Media source = new Media(file.toURI().toString());
+        //Media source = new Media(link);
         MediaPlayer player = new MediaPlayer(source);
         MediaView mediaView = new MediaView(player);
 
