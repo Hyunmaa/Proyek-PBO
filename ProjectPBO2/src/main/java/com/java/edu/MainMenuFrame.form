@@ -26,21 +26,24 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
-              <EmptySpace pref="198" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace pref="280" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                      <Component id="jButton1" alignment="0" max="32767" attributes="0"/>
-                      <Component id="btnListVideo" alignment="0" max="32767" attributes="0"/>
-                      <Component id="btnSearchVideo" alignment="0" max="32767" attributes="0"/>
-                      <Component id="btnSetting" alignment="0" max="32767" attributes="0"/>
-                      <Component id="btnChannel" alignment="0" max="32767" attributes="0"/>
-                      <Component id="btnPlaylist" alignment="0" max="32767" attributes="0"/>
-                      <Component id="btnSortVideo" alignment="0" pref="125" max="32767" attributes="0"/>
+                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                          <Component id="jButton1" alignment="0" max="32767" attributes="0"/>
+                          <Component id="btnListVideo" alignment="0" max="32767" attributes="0"/>
+                          <Component id="btnSearchVideo" alignment="0" max="32767" attributes="0"/>
+                          <Component id="btnSetting" alignment="0" max="32767" attributes="0"/>
+                          <Component id="btnChannel" alignment="0" max="32767" attributes="0"/>
+                          <Component id="btnPlaylist" alignment="0" max="32767" attributes="0"/>
+                          <Component id="btnSortVideo" alignment="0" min="-2" pref="125" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
               </Group>
-              <EmptySpace pref="199" max="32767" attributes="0"/>
+              <EmptySpace pref="280" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -49,7 +52,7 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" pref="51" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="btnListVideo" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="btnSearchVideo" min="-2" max="-2" attributes="0"/>
@@ -63,7 +66,7 @@
               <Component id="btnSetting" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="44" max="32767" attributes="0"/>
+              <EmptySpace pref="51" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
