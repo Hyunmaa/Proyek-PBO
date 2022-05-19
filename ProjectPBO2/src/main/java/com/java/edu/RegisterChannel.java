@@ -18,6 +18,7 @@ public class RegisterChannel extends javax.swing.JFrame {
      */
     public RegisterChannel() {
         initComponents();
+        channel = Menu.getChannel();
     }
 
     /**
@@ -173,17 +174,17 @@ public class RegisterChannel extends javax.swing.JFrame {
         }
         if (login) {
             LoginChannel l = new LoginChannel(x);
+            this.dispose();
             l.pack();
             l.setVisible(true);
-            this.setVisible(false);
         }else{
-            statusRegister.setText("Username / Password salah");
+            statusRegister.setText("Username tidak ada / Password salah");
         }
     }//GEN-LAST:event_btnLoginActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:\
-        this.setVisible(false);
+        this.dispose();
         MainMenuFrame m = new MainMenuFrame();
         m.setVisible(true);
     }//GEN-LAST:event_btnBackActionPerformed
@@ -234,5 +235,5 @@ public class RegisterChannel extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel statusRegister;
     // End of variables declaration//GEN-END:variables
-    ArrayList<Channel> channel = new ArrayList<>();
+    ArrayList<Channel> channel;
 }

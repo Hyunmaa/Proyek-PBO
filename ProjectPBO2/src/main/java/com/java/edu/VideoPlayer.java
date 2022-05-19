@@ -18,7 +18,7 @@ import javafx.stage.Stage;
  */
 public class VideoPlayer extends Application{
     
-    private String link="";
+    private static String link;
     
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -29,6 +29,10 @@ public class VideoPlayer extends Application{
         Scene scene = new Scene(player,800,400, Color.BLACK);
         primaryStage.setScene(scene);
         primaryStage.show();
+    }
+
+    public static void setLink(String link) {
+        VideoPlayer.link = link;
     }
     
 }

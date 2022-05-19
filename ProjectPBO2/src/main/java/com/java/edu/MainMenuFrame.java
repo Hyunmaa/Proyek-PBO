@@ -4,7 +4,6 @@
  */
 package com.java.edu;
 
-import java.awt.Dimension;
 import javafx.application.Application;
 
 /**
@@ -18,6 +17,7 @@ public class MainMenuFrame extends javax.swing.JFrame {
      */
     public MainMenuFrame() {
         initComponents();
+        tempArgs=Menu.giveArgs();
     }
 
     /**
@@ -29,7 +29,7 @@ public class MainMenuFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        judul = new javax.swing.JLabel();
         btnListVideo = new javax.swing.JButton();
         btnSortVideo = new javax.swing.JButton();
         btnSetting = new javax.swing.JButton();
@@ -37,13 +37,14 @@ public class MainMenuFrame extends javax.swing.JFrame {
         btnPlaylist = new javax.swing.JButton();
         btnChannel = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(800, 400));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setText("PBO Media Player");
-        jLabel1.setToolTipText("");
+        judul.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        judul.setText("PBO Media Player");
+        judul.setToolTipText("");
 
         btnListVideo.setBackground(new java.awt.Color(255, 255, 255));
         btnListVideo.setText("List Video");
@@ -100,14 +101,16 @@ public class MainMenuFrame extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setText("*tip : upload video dahulu baru kemudian bisa di play");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(246, Short.MAX_VALUE)
+                .addContainerGap(266, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
+                    .addComponent(judul)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(38, 38, 38)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -118,13 +121,17 @@ public class MainMenuFrame extends javax.swing.JFrame {
                             .addComponent(btnChannel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnPlaylist, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnSortVideo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(246, Short.MAX_VALUE))
+                .addContainerGap(226, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(202, 202, 202))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(judul, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnListVideo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -139,7 +146,9 @@ public class MainMenuFrame extends javax.swing.JFrame {
                 .addComponent(btnSetting)
                 .addGap(18, 18, 18)
                 .addComponent(jButton1)
-                .addContainerGap(51, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel1)
+                .addContainerGap(17, Short.MAX_VALUE))
         );
 
         pack();
@@ -168,13 +177,15 @@ public class MainMenuFrame extends javax.swing.JFrame {
     private void btnChannelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChannelActionPerformed
         // TODO add your handling code here:
         RegisterChannel r = new RegisterChannel();
+        this.dispose();
         r.pack();
         r.setVisible(true);
-        this.setVisible(false);
     }//GEN-LAST:event_btnChannelActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        /*VideoPlayer v = new VideoPlayer();
+        v.setLink("link");*/
         Application.launch(VideoPlayer.class, tempArgs);
     }//GEN-LAST:event_jButton1ActionPerformed
     
@@ -229,6 +240,7 @@ public class MainMenuFrame extends javax.swing.JFrame {
     private javax.swing.JButton btnSortVideo;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel judul;
     // End of variables declaration//GEN-END:variables
     String[] tempArgs;
 }

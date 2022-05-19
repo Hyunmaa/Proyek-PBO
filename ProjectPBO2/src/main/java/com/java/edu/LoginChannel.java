@@ -140,7 +140,7 @@ public class LoginChannel extends javax.swing.JFrame {
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
-        this.setVisible(false);
+        this.dispose();
         MainMenuFrame m = new MainMenuFrame();
         m.setVisible(true);
     }//GEN-LAST:event_btnBackActionPerformed
@@ -153,7 +153,8 @@ public class LoginChannel extends javax.swing.JFrame {
         File file = new File(f.getSelectedFile().getAbsolutePath());
         String link = file.toURI().toString();
         Video video = new Video(judul,link);
-        user.upload(video);
+        user.upload(video); // nambah video ke channel (biar bisa ngedit punya sendiri)
+        Menu.getVideo().add(video); // nambah video ke menu utama
     }//GEN-LAST:event_btnUploadActionPerformed
 
     private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditActionPerformed
