@@ -4,6 +4,9 @@
  */
 package com.java.edu;
 
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.application.Application;
 
 /**
@@ -155,7 +158,12 @@ public class MainMenuFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnListVideoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListVideoActionPerformed
-        
+        this.dispose();
+        try {
+            ListVideo lv = new ListVideo();
+        } catch (IOException ex) {
+            Logger.getLogger(MainMenuFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btnListVideoActionPerformed
 
     private void btnSortVideoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSortVideoActionPerformed

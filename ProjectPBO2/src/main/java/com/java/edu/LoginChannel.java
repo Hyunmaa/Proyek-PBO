@@ -5,9 +5,13 @@
  */
 package com.java.edu;
 
+import java.awt.Image;
+import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.imageio.ImageIO;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
@@ -153,6 +157,20 @@ public class LoginChannel extends javax.swing.JFrame {
         File file = new File(f.getSelectedFile().getAbsolutePath());
         String link = file.toURI().toString();
         Video video = new Video(judul,link);
+        int jawab = JOptionPane.showConfirmDialog(null,"Mau upload gambar?", "",JOptionPane.YES_NO_CANCEL_OPTION);
+        if (jawab==0) {
+            JFileChooser j = new JFileChooser();
+            j.showOpenDialog(null);
+            File fileG = j.getSelectedFile();
+            BufferedImage buffimg = null;
+            try {
+                buffimg = ImageIO.read(fileG);
+            } catch (IOException ex) {
+                Logger.getLogger(LoginChannel.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            Image image = buffimg.getScaledInstance(200, 100, Image.SCALE_DEFAULT);
+            video.setThumbnail(image);
+        }
         user.upload(video); // nambah video ke channel (biar bisa ngedit punya sendiri)
         Menu.getVideo().add(video); // nambah video ke menu utama
     }//GEN-LAST:event_btnUploadActionPerformed

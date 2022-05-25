@@ -5,13 +5,17 @@
  */
 package com.java.edu;
 
+import java.awt.Image;
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author axels
  */
 public class Video {
-    private String judul,linkVideo,linkGambar;
+    private String judul,linkVideo;
     private Channel owner;
+    private ImageIcon icon;
 
     public Video(String judul) {
         this.judul = judul;
@@ -22,10 +26,16 @@ public class Video {
         this.linkVideo = linkVideo;
     }
 
-    public Video(String judul, String linkVideo, String linkGambar) {
-        this.judul = judul;
-        this.linkVideo = linkVideo;
-        this.linkGambar = linkGambar;
+    public ImageIcon getIcon() {
+        return icon;
+    }
+
+    public void setIcon(ImageIcon icon) {
+        this.icon = icon;
+    }
+    
+    public void setThumbnail(Image img){
+        icon = new ImageIcon(img);
     }
 
     public String getJudul() {
@@ -42,14 +52,6 @@ public class Video {
 
     public void setLinkVideo(String linkVideo) {
         this.linkVideo = linkVideo;
-    }
-
-    public String getLinkGambar() {
-        return linkGambar;
-    }
-
-    public void setLinkGambar(String linkGambar) {
-        this.linkGambar = linkGambar;
     }
 
     public Channel getOwner() {
