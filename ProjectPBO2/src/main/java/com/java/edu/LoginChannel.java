@@ -157,6 +157,7 @@ public class LoginChannel extends javax.swing.JFrame {
         File file = new File(f.getSelectedFile().getAbsolutePath());
         String link = file.toURI().toString();
         Video video = new Video(judul,link);
+        video.setOwner(user);
         int jawab = JOptionPane.showConfirmDialog(null,"Mau upload gambar?", "",JOptionPane.YES_NO_CANCEL_OPTION);
         if (jawab==0) {
             JFileChooser j = new JFileChooser();

@@ -8,13 +8,11 @@ package com.java.edu;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridLayout;
-import java.awt.Image;
-import java.awt.image.BufferedImage;
-import java.io.File;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.io.IOException;
 import java.util.ArrayList;
-import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -33,22 +31,24 @@ public class ListVideo {
         tempArgs = Menu.giveArgs();
         
         JFrame lv = new JFrame();
-        lv.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
-        VideoPanel vp = new VideoPanel();
+        JPanel vp = new JPanel();
         vp.setLayout(new GridLayout(0,5,30,50));
-        vp.setBackground(Color.GRAY);
+        vp.setBackground(Color.BLACK);
         
         for (int i = 0; i < listVideo.size(); i++) {
-            JPanel jp = new JPanel();
+            VideoPanel jp = new VideoPanel(listVideo.get(i));
             JLabel video = new JLabel();
             
             video.setIcon(listVideo.get(i).getIcon());
+            video.setText(listVideo.get(i).getJudul()+"\n"+listVideo.get(i).getOwner().getNama());
+            video.setForeground(Color.WHITE);
+            video.setHorizontalTextPosition(JLabel.CENTER);
+            video.setVerticalTextPosition(JLabel.BOTTOM);
             
             jp.setPreferredSize(new Dimension(200,100));
             jp.add(video);
             jp.setBackground(Color.BLACK);
-            
             
             vp.add(jp);
             vp.revalidate();

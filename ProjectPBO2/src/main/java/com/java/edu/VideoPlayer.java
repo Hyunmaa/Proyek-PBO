@@ -9,7 +9,6 @@ import java.io.File;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.paint.Color;
-import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 /**
@@ -22,9 +21,6 @@ public class VideoPlayer extends Application{
     
     @Override
     public void start(Stage primaryStage) throws Exception {
-        FileChooser fil_chooser = new FileChooser();
-        File file = fil_chooser.showOpenDialog(primaryStage);
-        link = file.toURI().toString();
         Player player = new Player(link);
         Scene scene = new Scene(player,800,400, Color.BLACK);
         primaryStage.setScene(scene);

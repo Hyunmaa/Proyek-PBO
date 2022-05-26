@@ -39,7 +39,6 @@ public class MainMenuFrame extends javax.swing.JFrame {
         btnSearchVideo = new javax.swing.JButton();
         btnPlaylist = new javax.swing.JButton();
         btnChannel = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -97,13 +96,6 @@ public class MainMenuFrame extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("Play");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
         jLabel1.setText("*tip : upload video dahulu baru kemudian bisa di play");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -117,7 +109,6 @@ public class MainMenuFrame extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(38, 38, 38)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jButton1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnListVideo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnSearchVideo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnSetting, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -147,9 +138,7 @@ public class MainMenuFrame extends javax.swing.JFrame {
                 .addComponent(btnChannel)
                 .addGap(18, 18, 18)
                 .addComponent(btnSetting)
-                .addGap(18, 18, 18)
-                .addComponent(jButton1)
-                .addGap(18, 18, 18)
+                .addGap(64, 64, 64)
                 .addComponent(jLabel1)
                 .addContainerGap(17, Short.MAX_VALUE))
         );
@@ -158,7 +147,7 @@ public class MainMenuFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnListVideoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListVideoActionPerformed
-        this.dispose();
+        
         try {
             ListVideo lv = new ListVideo();
         } catch (IOException ex) {
@@ -189,13 +178,6 @@ public class MainMenuFrame extends javax.swing.JFrame {
         r.pack();
         r.setVisible(true);
     }//GEN-LAST:event_btnChannelActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        /*VideoPlayer v = new VideoPlayer();
-        v.setLink("link");*/
-        Application.launch(VideoPlayer.class, tempArgs);
-    }//GEN-LAST:event_jButton1ActionPerformed
     
     public void pass(String[] args){
         tempArgs=args;
@@ -246,7 +228,6 @@ public class MainMenuFrame extends javax.swing.JFrame {
     private javax.swing.JButton btnSearchVideo;
     private javax.swing.JButton btnSetting;
     private javax.swing.JButton btnSortVideo;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel judul;
     // End of variables declaration//GEN-END:variables
