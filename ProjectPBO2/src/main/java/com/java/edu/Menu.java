@@ -6,33 +6,28 @@ package com.java.edu;
 
 import java.awt.Dimension;
 import java.util.ArrayList;
+import javafx.stage.Stage;
 
 /**
  *
  * @author Gaby Paulina Spanic
  */
 public class Menu {
-    MainMenuFrame mainMenu = new MainMenuFrame();
     
     int wFrame = 800;
     int hFrame = 400;
     static ArrayList<Video> video = new ArrayList<>();
     static ArrayList<Channel> channel = new ArrayList<>();
-    static String[] args;
+    Stage primaryStage;
     
-    public void mainMenu(String[] args) {
+    public void mainMenu() {
+        MainMenuFrame mainMenu = new MainMenuFrame();
         mainMenu.setPreferredSize(new Dimension(wFrame, hFrame));
         mainMenu.pack();
         mainMenu.setVisible(true);
-        mainMenu.pass(args);
-        this.args=args;
     }
     
     // getter setter
-    public static String[] giveArgs(){
-        return args;
-    }
-
     public static ArrayList<Channel> getChannel() {
         return channel;
     }

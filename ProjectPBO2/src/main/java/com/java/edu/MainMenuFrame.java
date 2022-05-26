@@ -7,7 +7,7 @@ package com.java.edu;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javafx.application.Application;
+import javafx.stage.Stage;
 
 /**
  *
@@ -20,7 +20,10 @@ public class MainMenuFrame extends javax.swing.JFrame {
      */
     public MainMenuFrame() {
         initComponents();
-        tempArgs=Menu.giveArgs();
+    }
+    public MainMenuFrame(Stage primaryStage) {
+        initComponents();
+        this.primaryStage=primaryStage;
     }
 
     /**
@@ -179,9 +182,6 @@ public class MainMenuFrame extends javax.swing.JFrame {
         r.setVisible(true);
     }//GEN-LAST:event_btnChannelActionPerformed
     
-    public void pass(String[] args){
-        tempArgs=args;
-    }
     
     /**
      * @param args the command line arguments
@@ -231,5 +231,5 @@ public class MainMenuFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel judul;
     // End of variables declaration//GEN-END:variables
-    String[] tempArgs;
+    Stage primaryStage;
 }

@@ -5,8 +5,6 @@
  */
 package com.java.edu;
 
-import java.io.File;
-import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -15,20 +13,15 @@ import javafx.stage.Stage;
  *
  * @author axels
  */
-public class VideoPlayer extends Application{
+public class VideoPlayer{
     
-    private static String link;
-    
-    @Override
-    public void start(Stage primaryStage) throws Exception {
+    public void play(String link){
+        Stage stage = new Stage();
         Player player = new Player(link);
         Scene scene = new Scene(player,800,400, Color.BLACK);
-        primaryStage.setScene(scene);
-        primaryStage.show();
-    }
-
-    public static void setLink(String link) {
-        VideoPlayer.link = link;
+        stage.setScene(scene);
+        stage.show();
+        stage.setOnCloseRequest(event -> player.tutup(stage));
     }
     
 }

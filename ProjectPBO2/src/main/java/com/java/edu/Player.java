@@ -10,6 +10,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
+import javafx.stage.Stage;
 
 /**
  *
@@ -42,5 +43,10 @@ public class Player extends BorderPane{
         setStyle("-fx-background-color: #bfc2c7");
         
         player.play();
+    }
+    
+    public void tutup(Stage stage){
+        player.stop();
+        stage.close();
     }
 }

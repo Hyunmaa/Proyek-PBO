@@ -7,7 +7,7 @@ package com.java.edu;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import javafx.application.Application;
+import javafx.application.Platform;
 import javax.swing.JPanel;
 
 /**
@@ -17,6 +17,7 @@ import javax.swing.JPanel;
 public class VideoPanel extends JPanel implements MouseListener{
 
     private String link;
+    
     public VideoPanel(Video video) {
         link = video.getLinkVideo();
         addMouseListener(this);
@@ -33,9 +34,13 @@ public class VideoPanel extends JPanel implements MouseListener{
     @Override
     public void mouseClicked(MouseEvent e) {
         if (e.getSource().equals(this)) {
-            String[] tempArgs = Menu.giveArgs();
-            VideoPlayer.setLink(link);
-            Application.launch(VideoPlayer.class, tempArgs);
+            Platform.setImplicitExit(false);
+            Platform.runLater(new Runnable(){
+                @Override
+                public void run(){
+                    new VideoPlayer().play(link);
+                }
+            });
         }
     }
 

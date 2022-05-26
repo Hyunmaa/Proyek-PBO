@@ -8,11 +8,8 @@ package com.java.edu;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridLayout;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.ArrayList; 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -28,7 +25,6 @@ public class ListVideo {
     
     public ListVideo() throws IOException {
         listVideo = Menu.getVideo();
-        tempArgs = Menu.giveArgs();
         
         JFrame lv = new JFrame();
         
@@ -41,13 +37,16 @@ public class ListVideo {
             JLabel video = new JLabel();
             
             video.setIcon(listVideo.get(i).getIcon());
-            video.setText(listVideo.get(i).getJudul()+"\n"+listVideo.get(i).getOwner().getNama());
+            video.setText(listVideo.get(i).getJudul());
             video.setForeground(Color.WHITE);
             video.setHorizontalTextPosition(JLabel.CENTER);
             video.setVerticalTextPosition(JLabel.BOTTOM);
             
+            JLabel nama = new JLabel(listVideo.get(i).getOwner().getNama());
+            
             jp.setPreferredSize(new Dimension(200,100));
             jp.add(video);
+            jp.add(nama);
             jp.setBackground(Color.BLACK);
             
             vp.add(jp);
@@ -58,6 +57,7 @@ public class ListVideo {
         
         lv.add(js);
         lv.pack();
+        lv.setPreferredSize(new Dimension(800,400));
         lv.setVisible(true);
     }
     
