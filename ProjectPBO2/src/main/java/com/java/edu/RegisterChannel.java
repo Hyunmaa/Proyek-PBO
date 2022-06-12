@@ -177,6 +177,7 @@ public class RegisterChannel extends javax.swing.JFrame {
             this.dispose();
             l.pack();
             l.setVisible(true);
+            l.setLocationRelativeTo(null);
         }else{
             statusRegister.setText("Username tidak ada / Password salah");
         }
@@ -187,6 +188,7 @@ public class RegisterChannel extends javax.swing.JFrame {
         this.dispose();
         MainMenuFrame m = new MainMenuFrame();
         m.setVisible(true);
+        m.setLocationRelativeTo(null);
     }//GEN-LAST:event_btnBackActionPerformed
 
     /**

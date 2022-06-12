@@ -51,7 +51,6 @@ public class MainMenuFrame extends javax.swing.JFrame {
         judul.setText("PBO Media Player");
         judul.setToolTipText("");
 
-        btnListVideo.setBackground(new java.awt.Color(255, 255, 255));
         btnListVideo.setText("List Video");
         btnListVideo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -59,7 +58,6 @@ public class MainMenuFrame extends javax.swing.JFrame {
             }
         });
 
-        btnSortVideo.setBackground(new java.awt.Color(255, 255, 255));
         btnSortVideo.setText("Sorting Video");
         btnSortVideo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -67,7 +65,6 @@ public class MainMenuFrame extends javax.swing.JFrame {
             }
         });
 
-        btnSetting.setBackground(new java.awt.Color(255, 255, 255));
         btnSetting.setText("Setting");
         btnSetting.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -75,7 +72,6 @@ public class MainMenuFrame extends javax.swing.JFrame {
             }
         });
 
-        btnSearchVideo.setBackground(new java.awt.Color(255, 255, 255));
         btnSearchVideo.setText("Search Video");
         btnSearchVideo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -83,7 +79,6 @@ public class MainMenuFrame extends javax.swing.JFrame {
             }
         });
 
-        btnPlaylist.setBackground(new java.awt.Color(255, 255, 255));
         btnPlaylist.setText("Playlist");
         btnPlaylist.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -91,7 +86,6 @@ public class MainMenuFrame extends javax.swing.JFrame {
             }
         });
 
-        btnChannel.setBackground(new java.awt.Color(255, 255, 255));
         btnChannel.setText("Channel");
         btnChannel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

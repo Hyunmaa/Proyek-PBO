@@ -25,6 +25,7 @@ public class Menu {
         mainMenu.setPreferredSize(new Dimension(wFrame, hFrame));
         mainMenu.pack();
         mainMenu.setVisible(true);
+        mainMenu.setLocationRelativeTo(null);
     }
     
     // getter setter

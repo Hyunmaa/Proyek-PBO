@@ -147,6 +147,7 @@ public class LoginChannel extends javax.swing.JFrame {
         this.dispose();
         MainMenuFrame m = new MainMenuFrame();
         m.setVisible(true);
+        m.setLocationRelativeTo(null);
     }//GEN-LAST:event_btnBackActionPerformed
 
     private void btnUploadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUploadActionPerformed

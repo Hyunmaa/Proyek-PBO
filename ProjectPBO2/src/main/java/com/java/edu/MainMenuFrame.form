@@ -87,9 +87,6 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnListVideo">
       <Properties>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" red="ff" type="rgb"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="List Video"/>
       </Properties>
       <Events>
@@ -98,9 +95,6 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnSortVideo">
       <Properties>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" red="ff" type="rgb"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="Sorting Video"/>
       </Properties>
       <Events>
@@ -109,9 +103,6 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnSetting">
       <Properties>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" red="ff" type="rgb"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="Setting"/>
       </Properties>
       <Events>
@@ -120,9 +111,6 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnSearchVideo">
       <Properties>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" red="ff" type="rgb"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="Search Video"/>
       </Properties>
       <Events>
@@ -131,9 +119,6 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnPlaylist">
       <Properties>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" red="ff" type="rgb"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="Playlist"/>
       </Properties>
       <Events>
@@ -142,9 +127,6 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnChannel">
       <Properties>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" red="ff" type="rgb"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="Channel"/>
       </Properties>
       <Events>
