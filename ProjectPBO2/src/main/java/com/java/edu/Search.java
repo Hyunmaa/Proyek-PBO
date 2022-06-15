@@ -180,7 +180,7 @@ public class Search extends javax.swing.JFrame {
 
     // add picture to search button
     private void addPictureToSearchButton() {
-        ImageIcon icon = new ImageIcon("Proyek-PBO/ProjectPBO2/src/main/java/com/java/edu/Assets");
+        ImageIcon icon = new ImageIcon("Proyek-PBO/ProjectPBO2/src/main/java/com/java/edu/Assets/search.png");
         Image img = icon.getImage();
         Image newImg = img.getScaledInstance(LogoSearch.getWidth(), LogoSearch.getHeight(), Image.SCALE_SMOOTH);
         ImageIcon newIcon = new ImageIcon(newImg);
