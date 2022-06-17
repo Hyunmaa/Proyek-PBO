@@ -26,7 +26,7 @@ public class Video {
 
     public Video(String judul) {
         try {
-            this.img = ImageIO.read(new File("Video-Icon.png"));
+            this.img = ImageIO.read(new File("Assets\\Video-Icon.png"));
         } catch (IOException ex) {
             Logger.getLogger(Video.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -37,7 +37,7 @@ public class Video {
 
     public Video(String judul, String linkVideo) {
         try {
-            this.img = ImageIO.read(new File("Video-Icon.png"));
+            this.img = ImageIO.read(new File("Assets\\Video-Icon.png"));
         } catch (IOException ex) {
             Logger.getLogger(Video.class.getName()).log(Level.SEVERE, null, ex);
         }
