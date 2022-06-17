@@ -43,6 +43,7 @@ public class ListVideo {
             video.setVerticalTextPosition(JLabel.BOTTOM);
             
             JLabel nama = new JLabel(listVideo.get(i).getOwner().getNama());
+            nama.setForeground(Color.WHITE);
             
             jp.setPreferredSize(new Dimension(200,100));
             jp.add(video);

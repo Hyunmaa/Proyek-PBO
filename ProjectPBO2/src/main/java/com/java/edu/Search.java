@@ -27,6 +27,7 @@ public class Search extends javax.swing.JFrame {
      */
     public Search() {
         initComponents();
+        addPictureToSearchButton();
     }
 
     Channel user;
@@ -34,6 +35,7 @@ public class Search extends javax.swing.JFrame {
     public Search(Channel c) {
         initComponents();
         user = c;
+        addPictureToSearchButton();
     }
 
     /**
