@@ -174,8 +174,12 @@ public class RegisterChannel extends javax.swing.JFrame {
         }
         if (register) {
             Channel c = new Channel(boxUsername.getText(), boxPassword.getText());
-            channel.add(c);
-            JOptionPane.showMessageDialog(null, "Berhasil Register");
+            if (!boxUsername.getText().isEmpty() && !boxPassword.getText().isEmpty()) {
+                channel.add(c);
+                JOptionPane.showMessageDialog(null, "Register Success");
+            } else {
+                JOptionPane.showMessageDialog(null, "Register Failed, Please Fill All Field");
+            }
         } else {
             JOptionPane.showMessageDialog(null, "Username telah dipakai");
         }

@@ -10,6 +10,7 @@ import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
@@ -50,7 +51,8 @@ public class Search extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
@@ -86,50 +88,54 @@ public class Search extends javax.swing.JFrame {
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnBack)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(rewardPoint)
-                .addContainerGap())
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(181, 181, 181)
-                .addComponent(InputSearchField, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(LogoSearch)
-                .addContainerGap(101, Short.MAX_VALUE))
-        );
+                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(btnBack)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
+                                        javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(rewardPoint)
+                                .addContainerGap())
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(181, 181, 181)
+                                .addComponent(InputSearchField, javax.swing.GroupLayout.PREFERRED_SIZE, 321,
+                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(LogoSearch)
+                                .addContainerGap(101, Short.MAX_VALUE)));
         jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(14, 14, 14)
-                        .addComponent(rewardPoint, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btnBack)))
-                .addGap(4, 4, 4)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(InputSearchField, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(LogoSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(350, Short.MAX_VALUE))
-        );
+                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addGap(14, 14, 14)
+                                                .addComponent(rewardPoint, javax.swing.GroupLayout.PREFERRED_SIZE, 33,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addContainerGap()
+                                                .addComponent(btnBack)))
+                                .addGap(4, 4, 4)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(InputSearchField, javax.swing.GroupLayout.PREFERRED_SIZE, 36,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(LogoSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 36,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addContainerGap(350, Short.MAX_VALUE)));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                        javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addContainerGap()));
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING,
+                                javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                Short.MAX_VALUE));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -141,6 +147,16 @@ public class Search extends javax.swing.JFrame {
             LogoSearch.setSize(LogoSearch.getIcon().getIconWidth(), LogoSearch.getIcon().getIconHeight());
         } catch (IOException ex) {
             Logger.getLogger(Search.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        ListVideo lv = new ListVideo();
+        String searchText = InputSearchField.getText();
+        List<Video> searchResult = lv.searchVideo(searchText);
+        if (searchResult.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Video tidak ditemukan");
+        } else {
+            SearchResultFrame srf = new SearchResultFrame();
+            srf.setVisible(true);
+            srf.setLocationRelativeTo(null);
         }
     }// GEN-LAST:event_LogoSearchActionPerformed
 
@@ -154,6 +170,16 @@ public class Search extends javax.swing.JFrame {
 
     private void InputSearchFieldActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_InputSearchFieldActionPerformed
         // TODO add your handling code here:
+        ListVideo lv = new ListVideo();
+        String searchText = InputSearchField.getText();
+        List<Video> searchResult = lv.searchVideo(searchText);
+        if (searchResult.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Video tidak ditemukan");
+        } else {
+            SearchResultFrame srf = new SearchResultFrame();
+            srf.setVisible(true);
+            srf.setLocationRelativeTo(null);
+        }
     }// GEN-LAST:event_InputSearchFieldActionPerformed
 
     /**
