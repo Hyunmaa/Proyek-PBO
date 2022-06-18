@@ -36,6 +36,7 @@ public class MainMenuFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated
     // Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -81,6 +82,7 @@ public class MainMenuFrame extends javax.swing.JFrame {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 try {
                     btnSearchVideoActionPerformed(evt);
+
                 } catch (IOException e) {
                     // TODO Auto-generated catch block
                     e.printStackTrace();
@@ -171,13 +173,8 @@ public class MainMenuFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnListVideoActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnListVideoActionPerformed
-
-        try {
-            ListVideo lv = new ListVideo();
-        } catch (IOException ex) {
-            Logger.getLogger(MainMenuFrame.class.getName()).log(Level.SEVERE, null, ex);
-        }
+    private void btnListVideoActionPerformed(java.awt.event.ActionEvent evt) { // GEN-FIRST:event_btnListVideoActionPerformed
+        ListVideo lv = new ListVideo();
     }// GEN-LAST:event_btnListVideoActionPerformed
 
     private void btnSortVideoActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnSortVideoActionPerformed
