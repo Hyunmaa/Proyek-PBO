@@ -5,6 +5,7 @@
  */
 package com.java.edu;
 
+import java.awt.Dimension;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -15,6 +16,8 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+
+import javafx.geometry.Insets;
 
 /**
  *
@@ -45,6 +48,8 @@ public class Search extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -52,7 +57,7 @@ public class Search extends javax.swing.JFrame {
         rewardPoint = new javax.swing.JLabel();
         btnBack = new javax.swing.JButton();
         InputSearchField = new javax.swing.JTextField();
-        LogoSearch = new javax.swing.JLabel();
+        LogoSearch = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -72,6 +77,12 @@ public class Search extends javax.swing.JFrame {
             }
         });
 
+        LogoSearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LogoSearchActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -85,9 +96,9 @@ public class Search extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(181, 181, 181)
                 .addComponent(InputSearchField, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(LogoSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(127, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(LogoSearch)
+                .addContainerGap(101, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -122,6 +133,16 @@ public class Search extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void LogoSearchActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_LogoSearchActionPerformed
+        // TODO add your handling code here:
+        try {
+            addPictureToSearchButton();
+            LogoSearch.setSize(LogoSearch.getIcon().getIconWidth(), LogoSearch.getIcon().getIconHeight());
+        } catch (IOException ex) {
+            Logger.getLogger(Search.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }// GEN-LAST:event_LogoSearchActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
@@ -179,17 +200,20 @@ public class Search extends javax.swing.JFrame {
         });
     }
 
-    // add picture to search button
     private void addPictureToSearchButton() throws IOException {
         BufferedImage buffimg = ImageIO.read(new File("Assets\\search.png"));
-        Image image = buffimg.getScaledInstance(200, 100, Image.SCALE_DEFAULT);
+        Image image = buffimg.getScaledInstance(50, 50, Image.SCALE_DEFAULT);
         ImageIcon newIcon = new ImageIcon(image);
         LogoSearch.setIcon(newIcon);
+        LogoSearch.setPreferredSize(new Dimension(50, 50));
+        LogoSearch.setMaximumSize(new Dimension(50, 50));
+        LogoSearch.setMinimumSize(new Dimension(50, 50));
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField InputSearchField;
-    private javax.swing.JLabel LogoSearch;
+    private javax.swing.JButton LogoSearch;
     private javax.swing.JButton btnBack;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel rewardPoint;

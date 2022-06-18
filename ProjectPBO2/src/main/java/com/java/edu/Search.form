@@ -52,9 +52,9 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="181" max="-2" attributes="0"/>
                   <Component id="InputSearchField" min="-2" pref="321" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="LogoSearch" min="-2" pref="52" max="-2" attributes="0"/>
-                  <EmptySpace pref="127" max="32767" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="LogoSearch" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="101" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -103,7 +103,10 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="InputSearchFieldActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="LogoSearch">
+        <Component class="javax.swing.JButton" name="LogoSearch">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LogoSearchActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
