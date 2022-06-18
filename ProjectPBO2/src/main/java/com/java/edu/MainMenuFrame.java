@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.stage.Stage;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -25,6 +26,7 @@ public class MainMenuFrame extends javax.swing.JFrame {
     public MainMenuFrame(Stage primaryStage) {
         initComponents();
         this.primaryStage = primaryStage;
+        
     }
 
     /**
@@ -145,13 +147,11 @@ public class MainMenuFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnListVideoActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnListVideoActionPerformed
-
-        try {
-            ListVideo lv = new ListVideo();
-        } catch (IOException ex) {
-            Logger.getLogger(MainMenuFrame.class.getName()).log(Level.SEVERE, null, ex);
+    private void btnListVideoActionPerformed(java.awt.event.ActionEvent evt) { // GEN-FIRST:event_btnListVideoActionPerformed
+        if (Menu.getVideo().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Belum Upload Video");
         }
+        ListVideo lv = new ListVideo();
     }// GEN-LAST:event_btnListVideoActionPerformed
 
     private void btnSortVideoActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnSortVideoActionPerformed
@@ -162,7 +162,7 @@ public class MainMenuFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }// GEN-LAST:event_btnSettingActionPerformed
 
-    private void btnSearchVideoActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnSearchVideoActionPerformed
+    private void btnSearchVideoActionPerformed(java.awt.event.ActionEvent evt) throws IOException {// GEN-FIRST:event_btnSearchVideoActionPerformed
         // TODO add your handling code here:
         Search sf = new Search();
         sf.setVisible(true);

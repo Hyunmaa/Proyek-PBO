@@ -23,9 +23,17 @@ public class ListVideo {
     String[] tempArgs;
     ArrayList<Video> listVideo;
     
-    public ListVideo() throws IOException {
+    public ListVideo(){
         listVideo = Menu.getVideo();
-        
+        showVideo();
+    }
+    
+    public ListVideo(ArrayList<Video> lv){
+        listVideo = lv;
+        showVideo();
+    }
+    
+    public void showVideo(){
         JFrame lv = new JFrame();
         
         JPanel vp = new JPanel();
