@@ -46,7 +46,7 @@ public class ListVideo {
             JLabel video = new JLabel();
 
             video.setIcon(listVideo.get(i).getIcon());
-            video.setText(listVideo.get(i).getJudul()+"||"+listVideo.get(i).getViews()+" views");
+            video.setText(listVideo.get(i).getJudul() + " || " + listVideo.get(i).getViews() + " views");
             video.setForeground(Color.WHITE);
             video.setHorizontalTextPosition(JLabel.CENTER);
             video.setVerticalTextPosition(JLabel.BOTTOM);

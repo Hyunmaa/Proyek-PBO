@@ -148,16 +148,6 @@ public class Search extends javax.swing.JFrame {
         } catch (IOException ex) {
             Logger.getLogger(Search.class.getName()).log(Level.SEVERE, null, ex);
         }
-        ListVideo lv = new ListVideo();
-        String searchText = InputSearchField.getText();
-        List<Video> searchResult = lv.searchVideo(searchText);
-        if (searchResult.isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Video tidak ditemukan");
-        } else {
-            SearchResultFrame srf = new SearchResultFrame();
-            srf.setVisible(true);
-            srf.setLocationRelativeTo(null);
-        }
     }// GEN-LAST:event_LogoSearchActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnBackActionPerformed
