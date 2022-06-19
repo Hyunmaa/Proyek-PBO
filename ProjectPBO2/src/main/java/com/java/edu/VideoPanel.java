@@ -17,9 +17,11 @@ import javax.swing.JPanel;
 public class VideoPanel extends JPanel implements MouseListener{
 
     private String link;
+    private Video video;
     
     public VideoPanel(Video video) {
         link = video.getLinkVideo();
+        this.video=video;
         addMouseListener(this);
     }
 
@@ -38,6 +40,7 @@ public class VideoPanel extends JPanel implements MouseListener{
             Platform.runLater(new Runnable(){
                 @Override
                 public void run(){
+                    video.setViews(video.getViews()+1);
                     new VideoPlayer().play(link);
                 }
             });

@@ -23,6 +23,7 @@ public class Video {
     private Channel owner;
     BufferedImage img;
     private ImageIcon icon;
+    private int views;
 
     public Video(String judul) {
         try {
@@ -45,6 +46,14 @@ public class Video {
         this.icon = new ImageIcon(defaultimg);
         this.judul = judul;
         this.linkVideo = linkVideo;
+    }
+
+    public int getViews() {
+        return views;
+    }
+
+    public void setViews(int views) {
+        this.views = views;
     }
 
     public ImageIcon getIcon() {

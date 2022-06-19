@@ -192,6 +192,10 @@ public class LoginChannel extends javax.swing.JFrame {
 
     private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnEditActionPerformed
         // TODO add your handling code here:
+        EditVideo edit = new EditVideo(user);
+        edit.setVisible(true);
+        edit.setLocationRelativeTo(null);
+        this.dispose();
     }// GEN-LAST:event_btnEditActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnDeleteActionPerformed

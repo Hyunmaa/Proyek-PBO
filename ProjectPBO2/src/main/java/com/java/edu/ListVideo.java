@@ -8,7 +8,6 @@ package com.java.edu;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridLayout;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -47,7 +46,7 @@ public class ListVideo {
             JLabel video = new JLabel();
 
             video.setIcon(listVideo.get(i).getIcon());
-            video.setText(listVideo.get(i).getJudul());
+            video.setText(listVideo.get(i).getJudul()+"||"+listVideo.get(i).getViews()+" views");
             video.setForeground(Color.WHITE);
             video.setHorizontalTextPosition(JLabel.CENTER);
             video.setVerticalTextPosition(JLabel.BOTTOM);
