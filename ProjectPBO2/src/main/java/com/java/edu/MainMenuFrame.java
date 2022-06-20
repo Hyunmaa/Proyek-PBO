@@ -5,6 +5,8 @@
 package com.java.edu;
 
 import java.io.IOException;
+import java.util.ArrayList;
+
 import javafx.stage.Stage;
 import javax.swing.JOptionPane;
 
@@ -196,6 +198,10 @@ public class MainMenuFrame extends javax.swing.JFrame {
 
     private void btnSettingActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnSettingActionPerformed
         // TODO add your handling code here:
+        SettingFrame setting = new SettingFrame();
+        setting.setVisible(true);
+        setting.setLocationRelativeTo(null);
+        this.dispose();
     }// GEN-LAST:event_btnSettingActionPerformed
 
     private void btnSearchVideoActionPerformed(java.awt.event.ActionEvent evt) throws IOException {// GEN-FIRST:event_btnSearchVideoActionPerformed
@@ -208,10 +214,14 @@ public class MainMenuFrame extends javax.swing.JFrame {
 
     private void btnPlaylistActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnPlaylistActionPerformed
         // TODO add your handling code here:
-        PlaylistFrame playlist = new PlaylistFrame(Menu.getUser());
-        playlist.setVisible(true);
-        playlist.setLocationRelativeTo(null);
-        this.dispose();
+        if (Menu.getVideo().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Belum ada video");
+        } else {
+            PlaylistFrame playlist = new PlaylistFrame(Menu.getUser());
+            playlist.setVisible(true);
+            playlist.setLocationRelativeTo(null);
+            this.dispose();
+        }
     }// GEN-LAST:event_btnPlaylistActionPerformed
 
     private void btnChannelActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnChannelActionPerformed

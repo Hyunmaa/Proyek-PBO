@@ -70,8 +70,10 @@ public class ListVideo {
 
         lv.add(js);
         lv.pack();
+        // lv.setSize(900, 900);
         lv.setPreferredSize(new Dimension(800, 400));
         lv.setVisible(true);
+        lv.setLocationRelativeTo(null);
     }
 
     public List<Video> sortVideo() {
