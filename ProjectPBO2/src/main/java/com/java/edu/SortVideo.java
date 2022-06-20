@@ -215,11 +215,7 @@ public class SortVideo extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                try {
-                    new SortVideo().setVisible(true);
-                } catch (IOException ex) {
-                    Logger.getLogger(SortVideo.class.getName()).log(Level.SEVERE, null, ex);
-                }
+                new SortVideo().setVisible(true);
             }
         });
     }
