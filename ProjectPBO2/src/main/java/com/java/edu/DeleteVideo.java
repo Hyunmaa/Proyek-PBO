@@ -5,40 +5,31 @@
  */
 package com.java.edu;
 
-import java.awt.Dimension;
-import java.awt.Image;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.imageio.ImageIO;
 import javax.swing.DefaultListModel;
-import javax.swing.ImageIcon;
-import javax.swing.JFileChooser;
+
 /**
  *
  * @author axels
  */
-public class EditVideo extends javax.swing.JFrame {
+public class DeleteVideo extends javax.swing.JFrame {
 
     /**
-     * Creates new form EditVideo
+     * Creates new form DeleteVideo
      */
-    private DefaultListModel<String> model;
-    private ArrayList<Video> videos;
     private Channel user;
+    private DefaultListModel<String> model;
     private Video vid;
+    private ArrayList<Video> videos;
     
-    public EditVideo() {
+    public DeleteVideo() {
         initComponents();
     }
     
-    public EditVideo(Channel user){
+    public DeleteVideo(Channel user) {
         initComponents();
         this.user=user;
         videos=user.getVideo();
@@ -59,22 +50,16 @@ public class EditVideo extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btnBack = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         videoList = new javax.swing.JList<>();
         jLabel1 = new javax.swing.JLabel();
-        textJudul = new javax.swing.JTextField();
-        btnBack = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         thumbnail = new javax.swing.JLabel();
-        btnFinish = new javax.swing.JButton();
-        btnGanti = new javax.swing.JButton();
+        btnDelete = new javax.swing.JButton();
+        judulVideo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(420, 400));
-
-        jScrollPane1.setViewportView(videoList);
-
-        jLabel1.setText("Judul Video");
 
         btnBack.setText("Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
@@ -83,21 +68,20 @@ public class EditVideo extends javax.swing.JFrame {
             }
         });
 
+        jScrollPane1.setViewportView(videoList);
+
+        jLabel1.setText("Judul Video");
+
         jLabel2.setText("Thumbnail");
 
-        btnFinish.setText("Finish");
-        btnFinish.addActionListener(new java.awt.event.ActionListener() {
+        btnDelete.setText("Delete");
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnFinishActionPerformed(evt);
+                btnDeleteActionPerformed(evt);
             }
         });
 
-        btnGanti.setText("Change Thumbnail");
-        btnGanti.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGantiActionPerformed(evt);
-            }
-        });
+        judulVideo.setText("Null");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -111,16 +95,14 @@ public class EditVideo extends javax.swing.JFrame {
                 .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnFinish)
-                            .addComponent(btnGanti))
-                        .addGap(0, 80, Short.MAX_VALUE))
+                        .addComponent(btnDelete)
+                        .addGap(0, 167, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
                             .addComponent(jLabel1)
-                            .addComponent(textJudul, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(thumbnail, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(thumbnail, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(judulVideo))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
@@ -135,18 +117,16 @@ public class EditVideo extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(16, 16, 16)
                         .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(textJudul, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(18, 18, 18)
+                        .addComponent(judulVideo)
+                        .addGap(18, 18, 18)
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(thumbnail, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnGanti)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnFinish)
+                        .addGap(40, 40, 40)
+                        .addComponent(btnDelete)
                         .addGap(6, 6, 6)))
-                .addContainerGap(81, Short.MAX_VALUE))
+                .addContainerGap(64, Short.MAX_VALUE))
         );
 
         pack();
@@ -160,25 +140,13 @@ public class EditVideo extends javax.swing.JFrame {
         l.setLocationRelativeTo(null);
     }//GEN-LAST:event_btnBackActionPerformed
 
-    private void btnGantiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGantiActionPerformed
-        JFileChooser j = new JFileChooser();
-        j.showOpenDialog(null);
-        File fileG = j.getSelectedFile();
-        BufferedImage buffimg = null;
-        try {
-            buffimg = ImageIO.read(fileG);
-        } catch (IOException ex) {
-            Logger.getLogger(EditVideo.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        Image image = buffimg.getScaledInstance(200, 100, Image.SCALE_DEFAULT);
-        vid.setThumbnail(image);
-        thumbnail.setIcon(new ImageIcon(image));
-    }//GEN-LAST:event_btnGantiActionPerformed
-
-    private void btnFinishActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFinishActionPerformed
-        model.setElementAt(textJudul.getText(), videoList.getSelectedIndex());
-        vid.setJudul(textJudul.getText());
-    }//GEN-LAST:event_btnFinishActionPerformed
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+        model.removeElementAt(videoList.getSelectedIndex());
+        Menu.getVideo().remove(vid);
+        user.getVideo().remove(vid);
+        thumbnail.setIcon(null);
+        judulVideo.setText(null);
+    }//GEN-LAST:event_btnDeleteActionPerformed
 
     MouseListener mouseListener = new MouseAdapter() {
         public void mouseClicked(MouseEvent e) {
@@ -191,7 +159,7 @@ public class EditVideo extends javax.swing.JFrame {
                     break;
                 }
             }
-            textJudul.setText(selectedItem);
+            judulVideo.setText(selectedItem);
             //model.setElementAt("", videoList.getSelectedIndex());
         }
     };
@@ -213,32 +181,31 @@ public class EditVideo extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(EditVideo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DeleteVideo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(EditVideo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DeleteVideo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(EditVideo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DeleteVideo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(EditVideo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DeleteVideo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new EditVideo().setVisible(true);
+                new DeleteVideo().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
-    private javax.swing.JButton btnFinish;
-    private javax.swing.JButton btnGanti;
+    private javax.swing.JButton btnDelete;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField textJudul;
+    private javax.swing.JLabel judulVideo;
     private javax.swing.JLabel thumbnail;
     private javax.swing.JList<String> videoList;
     // End of variables declaration//GEN-END:variables

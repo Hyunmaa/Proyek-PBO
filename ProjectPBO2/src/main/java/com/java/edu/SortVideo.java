@@ -31,7 +31,6 @@ public class SortVideo extends javax.swing.JFrame {
      */
     public SortVideo() throws IOException {
         initComponents();
-        addPictureToSearchButton();
     }
 
     Channel user;
@@ -39,7 +38,6 @@ public class SortVideo extends javax.swing.JFrame {
     public SortVideo(Channel c) throws IOException {
         initComponents();
         user = c;
-        addPictureToSearchButton();
     }
 
     /**
@@ -111,25 +109,7 @@ public class SortVideo extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void LogoSearchActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_LogoSearchActionPerformed
-        // TODO add your handling code here:
-        try {
-            addPictureToSearchButton();
-            LogoSearch.setSize(LogoSearch.getIcon().getIconWidth(), LogoSearch.getIcon().getIconHeight());
-        } catch (IOException ex) {
-            Logger.getLogger(SortVideo.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        ListVideo lv = new ListVideo();
-        String searchText = InputSearchField.getText();
-        List<Video> searchResult = lv.searchVideo(searchText);
-        if (searchResult.isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Video tidak ditemukan");
-        } else {
-            SearchResultFrame srf = new SearchResultFrame();
-            srf.setVisible(true);
-            srf.setLocationRelativeTo(null);
-        }
-    }// GEN-LAST:event_LogoSearchActionPerformed
+   
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
@@ -139,19 +119,7 @@ public class SortVideo extends javax.swing.JFrame {
         m.setLocationRelativeTo(null);
     }// GEN-LAST:event_btnBackActionPerformed
 
-    private void InputSearchFieldActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_InputSearchFieldActionPerformed
-        // TODO add your handling code here:
-        ListVideo lv = new ListVideo();
-        String searchText = InputSearchField.getText();
-        List<Video> searchResult = lv.searchVideo(searchText);
-        if (searchResult.isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Video tidak ditemukan");
-        } else {
-            SearchResultFrame srf = new SearchResultFrame();
-            srf.setVisible(true);
-            srf.setLocationRelativeTo(null);
-        }
-    }// GEN-LAST:event_InputSearchFieldActionPerformed
+    
 
     /**
      * @param args the command line arguments
@@ -199,16 +167,7 @@ public class SortVideo extends javax.swing.JFrame {
         });
     }
 
-    private void addPictureToSearchButton() throws IOException {
-        BufferedImage buffimg = ImageIO.read(new File("Assets\\search.png"));
-        Image image = buffimg.getScaledInstance(50, 50, Image.SCALE_DEFAULT);
-        ImageIcon newIcon = new ImageIcon(image);
-        LogoSearch.setIcon(newIcon);
-        LogoSearch.setPreferredSize(new Dimension(50, 50));
-        LogoSearch.setMaximumSize(new Dimension(50, 50));
-        LogoSearch.setMinimumSize(new Dimension(50, 50));
-
-    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;

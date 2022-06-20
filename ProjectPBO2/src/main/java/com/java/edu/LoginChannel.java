@@ -200,6 +200,10 @@ public class LoginChannel extends javax.swing.JFrame {
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnDeleteActionPerformed
         // TODO add your handling code here:
+        DeleteVideo delete = new DeleteVideo(user);
+        delete.setVisible(true);
+        delete.setLocationRelativeTo(null);
+        this.dispose();
     }// GEN-LAST:event_btnDeleteActionPerformed
 
     /**

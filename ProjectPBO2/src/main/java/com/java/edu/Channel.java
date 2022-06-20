@@ -15,6 +15,7 @@ public class Channel {
     private String nama,password;
     private int rewardPoint=0;
     private ArrayList<Video> video = new ArrayList<>();
+    private ArrayList<Playlist> playlists = new ArrayList<>();
 
     public Channel(String nama, String password) {
         this.nama = nama;
@@ -55,5 +56,21 @@ public class Channel {
     
     public void upload(Video v){
         video.add(v);
+    }
+
+    public Playlist getPlaylist(int i) {
+        return playlists.get(i);
+    }
+    
+    public void addPlaylist(Playlist p){
+        playlists.add(p);
+    }
+    
+    public void removePlaylist(Playlist p){
+        playlists.remove(p);
+    }
+    
+    public int getPlaylistSize(){
+        return playlists.size();
     }
 }

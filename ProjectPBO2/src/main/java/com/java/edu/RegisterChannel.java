@@ -204,6 +204,7 @@ public class RegisterChannel extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(null, "Username tidak ada / Password salah");
         }
+        Menu.setUser(x);
     }// GEN-LAST:event_btnLoginActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnBackActionPerformed

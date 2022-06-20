@@ -6,7 +6,6 @@ package com.java.edu;
 
 import java.awt.Dimension;
 import java.util.ArrayList;
-import javafx.stage.Stage;
 
 /**
  *
@@ -18,7 +17,7 @@ public class Menu {
     int hFrame = 400;
     static ArrayList<Video> video = new ArrayList<>();
     static ArrayList<Channel> channel = new ArrayList<>();
-    Stage primaryStage;
+    static Channel user;
     
     public void mainMenu() {
         MainMenuFrame mainMenu = new MainMenuFrame();
@@ -45,5 +44,11 @@ public class Menu {
         Menu.video = video;
     }
     
+    public static Channel getUser(){
+        return user;
+    }
     
+    public static void setUser(Channel user){
+        Menu.user=user;
+    }
 }
