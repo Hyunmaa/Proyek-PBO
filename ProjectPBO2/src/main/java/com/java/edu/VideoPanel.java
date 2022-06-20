@@ -18,6 +18,7 @@ public class VideoPanel extends JPanel implements MouseListener{
 
     private String link;
     private Video video;
+    VideoPlayer vp;
     
     public VideoPanel(Video video) {
         link = video.getLinkVideo();
@@ -59,12 +60,29 @@ public class VideoPanel extends JPanel implements MouseListener{
 
     @Override
     public void mouseEntered(MouseEvent e) {
-        
+        if (e.getSource().equals(this)) {
+            Platform.setImplicitExit(false);
+            Platform.runLater(new Runnable(){
+                @Override
+                public void run(){
+                    vp = new VideoPlayer();
+                    vp.play(link);
+                }
+            });
+        }
     }
 
     @Override
     public void mouseExited(MouseEvent e) {
-        
+        if (e.getSource().equals(this)) {
+            Platform.setImplicitExit(false);
+            Platform.runLater(new Runnable(){
+                @Override
+                public void run(){
+                    vp.stop();
+                }
+            });
+        }
     }
 
 }

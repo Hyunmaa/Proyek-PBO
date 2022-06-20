@@ -14,14 +14,19 @@ import javafx.stage.Stage;
  * @author axels
  */
 public class VideoPlayer{
-    
+    private Player player;
+    private Stage stage;
     public void play(String link){
-        Stage stage = new Stage();
-        Player player = new Player(link);
+        stage = new Stage();
+        player = new Player(link);
         Scene scene = new Scene(player,800,400, Color.BLACK);
         stage.setScene(scene);
         stage.show();
         stage.setOnCloseRequest(event -> player.tutup(stage));
+    }
+    
+    public void stop(){
+        player.tutup(stage);
     }
     
 }
