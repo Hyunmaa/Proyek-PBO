@@ -59,7 +59,7 @@ public class ListVideo {
             jp.setPreferredSize(new Dimension(200, 100));
             jp.add(video);
             jp.add(nama);
-            jp.setBackground(Color.BLUE);
+            jp.setBackground(Color.black);
 
             vp.add(jp);
             vp.revalidate();
