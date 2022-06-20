@@ -16,6 +16,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
+
+import java.util.stream.*;
 /**
  *
  * @author axels
@@ -82,4 +84,9 @@ public class ListVideo {
         return result;
     }
 
+    public List<Video> sortVideo() {
+        List<Video> sortedList = listVideo.stream().sorted().collect(Collectors.toList());
+        
+        return sortedList;
+    }
 }
