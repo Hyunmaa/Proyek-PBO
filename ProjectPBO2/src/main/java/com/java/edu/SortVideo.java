@@ -5,20 +5,11 @@
  */
 package com.java.edu;
 
-import java.awt.Dimension;
-import java.awt.Image;
-import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
 import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
-import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
-
-import javafx.geometry.Insets;
 
 /**
  *
@@ -142,31 +133,35 @@ public class SortVideo extends javax.swing.JFrame {
         // TODO add your handling code here:
         Menu.getVideo();
         ArrayList<Video> result = new ArrayList<Video>();
-        Collections.sort(Menu.getVideo(), new Comparator<Video>() {
+        for (int i = 0; i < Menu.getVideo().size(); i++) {
+            result.add(Menu.getVideo().get(i));
+        }
+        Collections.sort(result, new Comparator<Video>() {
             @Override
             public int compare(Video o1, Video o2) {
                 return o2.getJudul().compareTo(o1.getJudul());
             }
         });
-        for (Video video : Menu.getVideo()) {
-            result.add(video);
+        if (result.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Video is empty");
+        } else {
+            ListVideo lv = new ListVideo(result);
         }
-        ListVideo lv = new ListVideo(result);
     }// GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         Menu.getVideo();
         ArrayList<Video> result = new ArrayList<Video>();
-
-        Collections.sort(Menu.getVideo(), new Comparator<Video>() {
+        for (Video v : Menu.getVideo()) {
+            result.add(v);
+        }
+        Collections.sort(result, new Comparator<Video>() {
             public int compare(Video v1, Video v2) {
                 return v1.getJudul().compareTo(v2.getJudul());
             }
         });
-        for (Video v : Menu.getVideo()) {
-            result.add(v);
-        }
+        
         if (result.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Video is empty");
         } else {

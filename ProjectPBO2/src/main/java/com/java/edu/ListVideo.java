@@ -59,7 +59,7 @@ public class ListVideo {
             jp.setPreferredSize(new Dimension(200, 100));
             jp.add(video);
             jp.add(nama);
-            jp.setBackground(Color.BLACK);
+            jp.setBackground(Color.BLUE);
 
             vp.add(jp);
             vp.revalidate();
@@ -73,18 +73,6 @@ public class ListVideo {
         lv.setPreferredSize(new Dimension(800, 400));
         lv.setVisible(true);
     }
-
-    // public ArrayList<Video> searchVideo(String searchText) {
-    // ArrayList<Video> result = new ArrayList<Video>();
-    // for (int i = 0; i < listVideo.size(); i++) {
-    // if
-    // (listVideo.get(i).getJudul().toLowerCase().contains(searchText.toLowerCase()))
-    // {
-    // result.add(listVideo.get(i));
-    // }
-    // }
-    // return result;
-    // }
 
     public List<Video> sortVideo() {
         List<Video> sortedList = listVideo.stream().sorted().collect(Collectors.toList());
