@@ -4,16 +4,22 @@
  */
 package com.java.edu;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Wilbert
  */
 public class SearchResultFrame extends javax.swing.JFrame {
 
+    static ArrayList<Video> result;
+
     /**
      * Creates new form SearchResultFrame
+     * 
+     * @param result
      */
-    public SearchResultFrame() {
+    public SearchResultFrame(ArrayList<Video> result) {
         initComponents();
     }
 
@@ -79,7 +85,7 @@ public class SearchResultFrame extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new SearchResultFrame().setVisible(true);
+                new SearchResultFrame(result).setVisible(true);
             }
         });
     }

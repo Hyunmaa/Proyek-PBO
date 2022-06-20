@@ -160,15 +160,22 @@ public class Search extends javax.swing.JFrame {
 
     private void InputSearchFieldActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_InputSearchFieldActionPerformed
         // TODO add your handling code here:
-        ListVideo lv = new ListVideo();
-        String searchText = InputSearchField.getText();
-        List<Video> searchResult = lv.searchVideo(searchText);
-        if (searchResult.isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Video tidak ditemukan");
+        ArrayList<Video> result = new ArrayList<Video>();
+        Menu.getVideo();
+        String search = InputSearchField.getText();
+        if (search.equals("") || search.equals("Masukkan judul")) {
+            JOptionPane.showMessageDialog(null, "Please enter a search term");
         } else {
-            SearchResultFrame srf = new SearchResultFrame();
-            srf.setVisible(true);
-            srf.setLocationRelativeTo(null);
+            for (int i = 0; i < Menu.getVideo().size(); i++) {
+                if (Menu.getVideo().get(i).getJudul().toLowerCase().contains(search.toLowerCase())) {
+                    result.add(Menu.getVideo().get(i));
+                }
+            }
+            if (result.size() == 0) {
+                JOptionPane.showMessageDialog(null, "No result found");
+            } else {
+                ListVideo lv = new ListVideo(result);
+            }
         }
     }// GEN-LAST:event_InputSearchFieldActionPerformed
 

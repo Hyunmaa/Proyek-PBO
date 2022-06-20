@@ -16,8 +16,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
-
 import java.util.stream.*;
+
 /**
  *
  * @author axels
@@ -48,7 +48,7 @@ public class ListVideo {
             JLabel video = new JLabel();
 
             video.setIcon(listVideo.get(i).getIcon());
-            video.setText(listVideo.get(i).getJudul()+"  ||  "+listVideo.get(i).getViews()+" views");
+            video.setText(listVideo.get(i).getJudul() + "  ||  " + listVideo.get(i).getViews() + " views");
             video.setForeground(Color.WHITE);
             video.setHorizontalTextPosition(JLabel.CENTER);
             video.setVerticalTextPosition(JLabel.BOTTOM);
@@ -74,19 +74,21 @@ public class ListVideo {
         lv.setVisible(true);
     }
 
-    public List<Video> searchVideo(String searchText) {
-        List<Video> result = new ArrayList<Video>();
-        for (int i = 0; i < listVideo.size(); i++) {
-            if (listVideo.get(i).getJudul().toLowerCase().contains(searchText.toLowerCase())) {
-                result.add(listVideo.get(i));
-            }
-        }
-        return result;
-    }
+    // public ArrayList<Video> searchVideo(String searchText) {
+    // ArrayList<Video> result = new ArrayList<Video>();
+    // for (int i = 0; i < listVideo.size(); i++) {
+    // if
+    // (listVideo.get(i).getJudul().toLowerCase().contains(searchText.toLowerCase()))
+    // {
+    // result.add(listVideo.get(i));
+    // }
+    // }
+    // return result;
+    // }
 
     public List<Video> sortVideo() {
         List<Video> sortedList = listVideo.stream().sorted().collect(Collectors.toList());
-        
+
         return sortedList;
     }
 }
