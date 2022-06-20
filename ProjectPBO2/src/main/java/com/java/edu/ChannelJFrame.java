@@ -5,7 +5,11 @@
 package com.java.edu;
 
 import javax.swing.*;
+import javax.imageio.ImageIO;
 import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
 /**
  *
@@ -32,7 +36,7 @@ public class ChannelJFrame extends javax.swing.JFrame {
 
         PanelPhotoProfile = new javax.swing.JPanel();
         TextFieldNama = new javax.swing.JTextField();
-        TextFieldNama1 = new javax.swing.JTextField();
+        TextFieldPoint = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 153, 153));
@@ -60,11 +64,11 @@ public class ChannelJFrame extends javax.swing.JFrame {
             }
         });
 
-        TextFieldNama1.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        TextFieldNama1.setText("TOTAL POIN :");
-        TextFieldNama1.addActionListener(new java.awt.event.ActionListener() {
+        TextFieldPoint.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        TextFieldPoint.setText("TOTAL POINT :");
+        TextFieldPoint.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TextFieldNama1ActionPerformed(evt);
+                TextFieldPointActionPerformed(evt);
             }
         });
 
@@ -75,13 +79,13 @@ public class ChannelJFrame extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(282, 282, 282)
-                        .addComponent(PanelPhotoProfile, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(165, 165, 165)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(TextFieldNama)
-                            .addComponent(TextFieldNama1))))
+                            .addComponent(TextFieldPoint)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(282, 282, 282)
+                        .addComponent(PanelPhotoProfile, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(268, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -92,7 +96,7 @@ public class ChannelJFrame extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(TextFieldNama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(TextFieldNama1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(TextFieldPoint, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(150, Short.MAX_VALUE))
         );
 
@@ -103,19 +107,30 @@ public class ChannelJFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_TextFieldNamaActionPerformed
 
-    private void TextFieldNama1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextFieldNama1ActionPerformed
+    private void TextFieldPointActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextFieldPointActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_TextFieldNama1ActionPerformed
+    }//GEN-LAST:event_TextFieldPointActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public static void main(String args[]) throws IOException {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
+        
+        JFrame frame = new JFrame();
+        JPanel panel = new JPanel();
+        panel.setLayout(new FlowLayout());
+        BufferedImage photoProfile = ImageIO.read(new File("/Assets/Photo-profil.png"));
+        JLabel profileLabel = new JLabel(new ImageIcon(photoProfile));
+        panel.add(profileLabel);
+        frame.add(panel);
+        frame.setSize(150, 150);
+        frame.setVisible(true);
+ 
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -136,16 +151,6 @@ public class ChannelJFrame extends javax.swing.JFrame {
 
         /* Create and display the form */
         
-        JFrame frame = new JFrame();
-        frame.setLayout(null);
-        
-        Container c = frame.getContentPane();
-        
-        JLabel label = new JLabel();
-        label.setIcon(new ImageIcon("Photo-profil.png"));
-        Dimension size = label.getPreferredSize();
-        label.setBounds(282, 268, size.width, size.height);
-        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new ChannelJFrame().setVisible(true);
@@ -156,6 +161,6 @@ public class ChannelJFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PanelPhotoProfile;
     private javax.swing.JTextField TextFieldNama;
-    private javax.swing.JTextField TextFieldNama1;
+    private javax.swing.JTextField TextFieldPoint;
     // End of variables declaration//GEN-END:variables
 }

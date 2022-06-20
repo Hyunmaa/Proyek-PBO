@@ -29,15 +29,15 @@
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="282" max="-2" attributes="0"/>
-                      <Component id="PanelPhotoProfile" min="-2" pref="150" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="165" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="TextFieldNama" max="32767" attributes="0"/>
-                          <Component id="TextFieldNama1" max="32767" attributes="0"/>
+                          <Component id="TextFieldPoint" max="32767" attributes="0"/>
                       </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="282" max="-2" attributes="0"/>
+                      <Component id="PanelPhotoProfile" min="-2" pref="150" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace pref="268" max="32767" attributes="0"/>
@@ -52,7 +52,7 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="TextFieldNama" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="TextFieldNama1" min="-2" max="-2" attributes="0"/>
+              <Component id="TextFieldPoint" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="150" max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -98,15 +98,15 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TextFieldNamaActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="TextFieldNama1">
+    <Component class="javax.swing.JTextField" name="TextFieldPoint">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Calibri" size="18" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="TOTAL POIN :"/>
+        <Property name="text" type="java.lang.String" value="TOTAL POINT :"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TextFieldNama1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TextFieldPointActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
