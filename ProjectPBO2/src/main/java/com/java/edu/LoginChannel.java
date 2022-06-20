@@ -164,7 +164,16 @@ public class LoginChannel extends javax.swing.JFrame {
 
     private void btnUploadActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnUploadActionPerformed
         // TODO add your handling code here:
-        String judul = JOptionPane.showInputDialog("Input Judul Video : ");
+        String judul = "";
+        boolean isJudul = false;
+        while (!isJudul) {
+            judul = JOptionPane.showInputDialog(this, "Masukkan Judul Video");
+            if (judul.equals("")) {
+                JOptionPane.showMessageDialog(this, "Judul tidak boleh kosong");
+            } else {
+                isJudul = true;
+            }
+        }
         JFileChooser f = new JFileChooser();
         f.showOpenDialog(null);
         File file = new File(f.getSelectedFile().getAbsolutePath());

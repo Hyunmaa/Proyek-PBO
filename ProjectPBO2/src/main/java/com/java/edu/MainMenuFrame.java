@@ -67,7 +67,12 @@ public class MainMenuFrame extends javax.swing.JFrame {
         btnSortVideo.setText("Sorting Video");
         btnSortVideo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSortVideoActionPerformed(evt);
+                try {
+                    btnSortVideoActionPerformed(evt);
+                } catch (IOException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
             }
         });
 
@@ -181,8 +186,12 @@ public class MainMenuFrame extends javax.swing.JFrame {
         }
     }// GEN-LAST:event_btnListVideoActionPerformed
 
-    private void btnSortVideoActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnSortVideoActionPerformed
+    private void btnSortVideoActionPerformed(java.awt.event.ActionEvent evt) throws IOException {// GEN-FIRST:event_btnSortVideoActionPerformed
         // TODO add your handling code here:
+        SortVideo sort = new SortVideo();
+        sort.setVisible(true);
+        sort.setLocationRelativeTo(null);
+        this.dispose();
     }// GEN-LAST:event_btnSortVideoActionPerformed
 
     private void btnSettingActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnSettingActionPerformed

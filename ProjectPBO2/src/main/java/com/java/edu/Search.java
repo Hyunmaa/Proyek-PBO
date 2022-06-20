@@ -148,6 +148,23 @@ public class Search extends javax.swing.JFrame {
         } catch (IOException ex) {
             Logger.getLogger(Search.class.getName()).log(Level.SEVERE, null, ex);
         }
+        ArrayList<Video> result = new ArrayList<Video>();
+        Menu.getVideo();
+        String search = InputSearchField.getText();
+        if (search.equals("") || search.equals("Masukkan judul")) {
+            JOptionPane.showMessageDialog(null, "Please enter a search term");
+        } else {
+            for (int i = 0; i < Menu.getVideo().size(); i++) {
+                if (Menu.getVideo().get(i).getJudul().toLowerCase().contains(search.toLowerCase())) {
+                    result.add(Menu.getVideo().get(i));
+                }
+            }
+            if (result.isEmpty()) {
+                JOptionPane.showMessageDialog(null, "No result found");
+            } else {
+                ListVideo lv = new ListVideo(result);
+            }
+        }
     }// GEN-LAST:event_LogoSearchActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnBackActionPerformed
@@ -171,7 +188,7 @@ public class Search extends javax.swing.JFrame {
                     result.add(Menu.getVideo().get(i));
                 }
             }
-            if (result.size() == 0) {
+            if (result.isEmpty()) {
                 JOptionPane.showMessageDialog(null, "No result found");
             } else {
                 ListVideo lv = new ListVideo(result);
