@@ -108,18 +108,20 @@ public class SettingFrame extends javax.swing.JFrame {
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnDeleteActionPerformed
         // TODO add your handling code here:
-        if (channelList.getSelectedValue() == null) {
-            JOptionPane.showMessageDialog(this, "Please select a channel");
-        }
         String selectedItem = (String) channelList.getSelectedValue();
-        for (Channel channel : Menu.getChannel()) {
-            if (channel.getNama().equals(selectedItem)) {
-                JOptionPane.showMessageDialog(null, "Successfully deleted channel " + selectedItem);
-                Menu.getChannel().remove(channel);
-                model.removeElementAt(channelList.getSelectedIndex());
-                break;
+        if (selectedItem == null) {
+            JOptionPane.showMessageDialog(this, "Please select a channel");
+        } else {
+            for (Channel channel : Menu.getChannel()) {
+                if (channel.getNama().equals(selectedItem)) {
+                    JOptionPane.showMessageDialog(null, "Successfully deleted channel " + selectedItem);
+                    Menu.getChannel().remove(channel);
+                    model.removeElementAt(channelList.getSelectedIndex());
+                    break;
+                }
             }
         }
+
     }// GEN-LAST:event_btnDeleteActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnBackActionPerformed
