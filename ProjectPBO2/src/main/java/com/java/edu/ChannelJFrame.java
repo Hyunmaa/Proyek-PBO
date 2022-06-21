@@ -21,8 +21,20 @@ public class ChannelJFrame extends javax.swing.JFrame {
     /**
      * Creates new form ChannelJFrame
      */
+    private Channel user;
+    private Channel rewardPoint;
+    
     public ChannelJFrame() {
         initComponents();
+    }
+    
+    public ChannelJFrame(Channel user) {
+        initComponents();
+        this.user = user;
+        this.rewardPoint = rewardPoint;
+        String s = String.valueOf(user.getRewardPoint());
+        getUsername.setText(user.getNama());
+        getPoint.setText(s);
     }
 
     /**
@@ -37,6 +49,9 @@ public class ChannelJFrame extends javax.swing.JFrame {
         PanelPhotoProfile = new javax.swing.JPanel();
         TextFieldNama = new javax.swing.JTextField();
         TextFieldPoint = new javax.swing.JTextField();
+        getPoint = new javax.swing.JLabel();
+        getUsername = new javax.swing.JLabel();
+        btnBack = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 153, 153));
@@ -72,19 +87,32 @@ public class ChannelJFrame extends javax.swing.JFrame {
             }
         });
 
+        btnBack.setText("Back");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(165, 165, 165)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(TextFieldNama)
-                            .addComponent(TextFieldPoint)))
+                            .addComponent(TextFieldPoint)
+                            .addComponent(TextFieldNama))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(getPoint, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(getUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(282, 282, 282)
+                        .addContainerGap()
+                        .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(PanelPhotoProfile, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(268, Short.MAX_VALUE))
         );
@@ -92,12 +120,20 @@ public class ChannelJFrame extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(PanelPhotoProfile, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(TextFieldNama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(TextFieldPoint, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(150, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(PanelPhotoProfile, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(TextFieldNama, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(TextFieldPoint, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(getUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(getPoint, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(148, Short.MAX_VALUE))
         );
 
         pack();
@@ -105,11 +141,24 @@ public class ChannelJFrame extends javax.swing.JFrame {
 
     private void TextFieldNamaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextFieldNamaActionPerformed
         // TODO add your handling code here:
+        this.user = user;
+        getUsername.setText(user.getNama());
     }//GEN-LAST:event_TextFieldNamaActionPerformed
 
     private void TextFieldPointActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextFieldPointActionPerformed
         // TODO add your handling code here:
+        this.rewardPoint = rewardPoint;
+        String s = String.valueOf(user.getRewardPoint());
+        getPoint.setText(s);
     }//GEN-LAST:event_TextFieldPointActionPerformed
+
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        LoginChannel channel = new LoginChannel();
+        channel.setVisible(true);
+        channel.setLocationRelativeTo(null);
+    }//GEN-LAST:event_btnBackActionPerformed
 
     /**
      * @param args the command line arguments
@@ -162,5 +211,8 @@ public class ChannelJFrame extends javax.swing.JFrame {
     private javax.swing.JPanel PanelPhotoProfile;
     private javax.swing.JTextField TextFieldNama;
     private javax.swing.JTextField TextFieldPoint;
+    private javax.swing.JButton btnBack;
+    private javax.swing.JLabel getPoint;
+    private javax.swing.JLabel getUsername;
     // End of variables declaration//GEN-END:variables
 }
